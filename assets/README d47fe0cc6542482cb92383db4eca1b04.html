@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>README</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d47fe0cc-6542-482c-b923-83db4eca1b04" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📖</span></div><h1 class="page-title">README</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>선택</th><td><span class="selected-value select-value-color-orange">회고</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>진행 중</span></td></tr></tbody></table></header><div class="page-body"><h1 id="e998d48c-0b9a-4c29-8ab3-f8f1c015f791" class=""><strong>📜 목차</strong></h1><ol type="1" id="636babb5-74ec-4872-a25a-7acf10db9db1" class="numbered-list" start="1"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">서비스 소개</a></li></ol><ol type="1" id="6ab93a12-38b3-4f6e-81f6-8202908b5ece" class="numbered-list" start="2"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">기획 배경</a></li></ol><ol type="1" id="b342119d-f56e-4358-9bbd-68e2ca3b558e" class="numbered-list" start="3"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">화면소개</a></li></ol><ol type="1" id="7ae41cf1-d1e5-403c-8702-4195944b268a" class="numbered-list" start="4"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">기술 스택</a></li></ol><ol type="1" id="851c8ef9-d5c0-45e6-af4d-517563181ef7" class="numbered-list" start="5"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">기술 특이점</a></li></ol><ol type="1" id="3d4aaeba-8252-4d0d-ab74-6950d9e5389d" class="numbered-list" start="6"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">서비스 아키텍처</a></li></ol><ol type="1" id="9467d2c6-4bc3-4f15-b0f6-7fc7305466b0" class="numbered-list" start="7"><li><a href="https://www.notion.so/README-d47fe0cc6542482cb92383db4eca1b04?pvs=21">프로젝트 산출물</a></li></ol><hr id="8586e3e2-a8c1-4ec4-aabf-d4b8f8b7d7e2"/><h1 id="911e0459-d2cd-453d-bcc6-00f038326518" class=""><strong>서비스 소개 </strong></h1><h2 id="ea6fed0e-751e-4ac1-ada4-ba574e6e640d" class=""><strong>✨서비스 설명 ✨</strong></h2><figure id="2e702be3-833d-433a-a1ae-26385b132371" class="image" style="text-align:left"><a href="DALLE_2024-05-19_21.19.16_-_Create_a_game_logo_for_Makja_a_tower_defense_game_set_in_medieval_Europe._The_logo_should_feature_stylistic_elements_of_medieval_European_castles_.webp"><img style="width:288px" src="DALLE_2024-05-19_21.19.16_-_Create_a_game_logo_for_Makja_a_tower_defense_game_set_in_medieval_Europe._The_logo_should_feature_stylistic_elements_of_medieval_European_castles_.webp"/></a></figure><p id="bf042a13-d58c-43da-b1dc-d7362d4c670a" class="">
+</p><h3 id="b8b2f924-7bd6-4473-a667-4e8f5a4487ec" class=""><strong>✨개요 ✨</strong></h3><ul id="13b81864-e84a-4f1c-8038-86e74e708329" class="bulleted-list"><li style="list-style-type:disc">3D 타워 디펜스 게임</li></ul><ul id="2c730eb2-92bb-4859-b4ca-f61826036054" class="bulleted-list"><li style="list-style-type:disc">서비스 명 : Makja</li></ul><h3 id="d694e92c-0890-4ba6-b1e2-f2fee92527d3" class=""><strong>🎯 타겟 🎯</strong></h3><ul id="eb2cdd83-8f66-45fb-996e-d64b08ba20e0" class="bulleted-list"><li style="list-style-type:disc">타워디펜스 게임을 좋아하고 즐기는 사람</li></ul><ul id="bd798fdc-532d-48a0-a477-07cd7a8a93d1" class="bulleted-list"><li style="list-style-type:disc">기존 타워디펜스 게임에 아쉬움을 느끼는 사람</li></ul><ul id="482a19b9-537e-479b-9376-857fa2661851" class="bulleted-list"><li style="list-style-type:disc">3D 액션 게임을 좋아하는 사람</li></ul><p id="11fa2df0-e0ec-41e4-92db-678b75c8dbaf" class="">
+</p><h1 id="e353f0d8-cfbd-4f8e-97be-618f10443033" class=""><strong>✨기획 배경 ✨</strong></h1><h2 id="77f9c4c0-5bf7-4e62-bdad-604c4066e6c1" class=""><strong>배경</strong></h2><ul id="d81caa09-92a3-4f10-aa44-1b39f8ec5b44" class="bulleted-list"><li style="list-style-type:disc">타워디펜스 게임은 선풍적인 인기를 끌고 있음</li></ul><ul id="13eeee75-9e1f-4863-aeba-637f72bef19a" class="bulleted-list"><li style="list-style-type:disc">하지만 컨텐츠 다양성 부재로 타워건설-웨이브 방어의 패턴이 반복되어 흥미도 저하</li></ul><ul id="7dacecc2-8b9f-4095-b687-616ed8705ac7" class="bulleted-list"><li style="list-style-type:disc">유저가 직접 적을 처치하는 요소를 추가하여 새로운 재미를 제공</li></ul><h2 id="f5e9f0ad-b49f-4675-99de-0292c9d20abd" class=""><strong>목적 🥅</strong></h2><p id="5735acd5-0733-4929-a201-f58f09e58df3" class=""><strong>유저가 직접 적을 처치하는 시스템을 추가하여 기존 타워디펜스게임과는 차별화된 기능을 제공하여 유저에게 새로운 재미 요소의 게임을 제공</strong></p><hr id="5f783025-e228-4fa3-85e5-ed07b7f3b66c"/><h1 id="96682a41-2651-47ed-a73e-0cbd20f7ebce" class="">🕹️ <strong>화면 소개</strong></h1><h2 id="3a2f1dd9-aee4-438b-b297-9cf88cecda47" class="">1. 플레이어</h2><hr id="a4ac807b-8460-4133-8b89-3f6ce5ba3273"/><ul id="f8a5ed8c-e9f6-4ba4-9059-c20e81dd8a1b" class="bulleted-list"><li style="list-style-type:disc">이동</li></ul><ul id="05f00f67-dc6d-43c1-9bca-390e63477083" class="bulleted-list"><li style="list-style-type:disc">텔레포트</li></ul><ul id="3ca07935-41fe-4a10-a318-fc4048f2ea0f" class="bulleted-list"><li style="list-style-type:disc">공격</li></ul><ul id="a3c2b0bd-510f-4efb-93f6-0121c55def75" class="bulleted-list"><li style="list-style-type:disc">레벨업</li></ul><ul id="3e40071a-dbd0-40e9-98ab-b2c6988e94b6" class="bulleted-list"><li style="list-style-type:disc">강화</li></ul><h2 id="4a559bb7-e008-4563-9382-8c6428524163" class="">2. 타워</h2><hr id="99b4aa4f-fa97-4dbb-9ca5-8c51b1be06c6"/><ul id="00a8f499-a4f1-49f0-b9ed-98818990c059" class="bulleted-list"><li style="list-style-type:disc">카메라 전환</li></ul><ul id="3f523be8-c12e-48a6-a5c5-8b1d059166a6" class="bulleted-list"><li style="list-style-type:disc">설치</li></ul><ul id="a1470502-694e-42e8-8357-d67035c9c0e6" class="bulleted-list"><li style="list-style-type:disc">강화</li></ul><ul id="da78ee45-3cee-444d-a10d-b95bf3564cc5" class="bulleted-list"><li style="list-style-type:disc">판매</li></ul><ul id="bec4db17-aa33-43bc-88ec-67ef3b6190e6" class="bulleted-list"><li style="list-style-type:disc">공격</li></ul><ul id="1586aa73-877b-46de-a661-e04635e0ddb1" class="bulleted-list"><li style="list-style-type:disc">바리케이트 설치</li></ul><h2 id="b880014c-3781-4aa6-88fa-9acc6ec733dc" class="">3. 적</h2><hr id="438f391e-cf4e-4091-a961-077bcdd7b65b"/><p id="26dde5cf-7b69-4d9d-90a4-697077b3cef9" class="">
+</p><h2 id="afd9ef3d-70bb-4b91-b2ed-3f57dcf84f5e" class="">4. UI</h2><hr id="73c58327-9a8e-4e00-b941-ca7980495214"/><ul id="286b11be-555d-479c-9e23-fbbd0ae1b352" class="bulleted-list"><li style="list-style-type:disc">로그인</li></ul><ul id="5233ec0f-5b17-4b21-8408-ba4186e1c86d" class="bulleted-list"><li style="list-style-type:disc">로그아웃</li></ul><ul id="150fe301-dfa9-4e81-a4a9-a3be90c3bab3" class="bulleted-list"><li style="list-style-type:disc">회원가입</li></ul><ul id="c3377d04-0b2e-4e4d-bee0-151dc1bc5db0" class="bulleted-list"><li style="list-style-type:disc">랭킹</li></ul><p id="5e9d0fe7-1a16-4e43-aaca-000592c4da65" class="">
+</p><h1 id="5d369387-8528-47d3-ae11-5fd6e7ff9574" class=""><strong>✨ 기술 스택 ✨</strong></h1><p id="1234c895-77a6-4824-9012-65d0cbb939ec" class="">
+</p><h2 id="e3ab5f80-a8cf-411c-8dd5-6c8bbcdbb107" class=""><strong>1. Redis</strong></h2><p id="1f7b8501-851a-4a22-9fa8-92b67541b864" class="">
+</p><figure id="6b5bcb09-04fc-4746-b310-9bb3021f71ef" class="image" style="text-align:left"><a href="1100px_Redis_Logo_01-1024x707.png"><img style="width:288px" src="1100px_Redis_Logo_01-1024x707.png"/></a></figure><blockquote id="4ea2a668-fce9-490f-89b3-37844d353981" class="">Redis는 주로 애플리케이션 캐시나 빠른 응답 속도를 가진 데이터베이스로 사용되는 오픈 소스 인메모리 NoSQL 저장소 입니다.</blockquote><h3 id="7e58f726-b89f-442c-91cc-e9b4f22be9f5" class=""><strong>적용</strong></h3><ul id="08c9d85f-babb-4e2e-b63f-1425b5e60f4c" class="bulleted-list"><li style="list-style-type:disc"><strong>JWT Token을 사용한 로그인</strong><br/>로그인시 사용되는 Refresh-token을 저장하기 위해서 사용하였으며 보안성을 강화하기 위해서 엑세스 토큰 갱신시에 리프레시 토큰도 같이 갱신되는 <br/><code>Refresh Token Rotation</code> 방식을 채용하였습니다.</li></ul><ul id="9d8a3d25-c37f-4282-a77e-f7c76c2cf736" class="bulleted-list"><li style="list-style-type:disc"><strong>멤버의 online/offline 상태 관리</strong><p id="4a83d03f-b7e4-407b-b3ca-d198b88abf01" class="">멤버의 online/offline 상태를 관리하기 위해서 loginStatus를 key로 등록하여 추적했습니다.</p></li></ul><p id="18e6807e-a2cb-4596-abe1-2e0adbb039f9" class="">
+</p><h2 id="0b33e2d3-029a-4bd7-8eb3-33ae5cc2d406" class=""><strong>2. Docker</strong></h2><figure id="e726c982-9cf8-4dcb-941e-3de67645317f" class="image" style="text-align:left"><a href="docker.png"><img style="width:288px" src="docker.png"/></a></figure><blockquote id="24ec7eae-be0a-499a-ac62-5b6926054ca7" class="">Docker는 컨테이너 기반의 오픈소스 가상화 플랫폼입니다.<p id="717053a7-f731-49b1-91d1-29ac7d2ec42f" class="">Docker를 사용하면 개발자는 어플리케이션을 빌드, 배포, 실행할 수 있습니다.</p><p id="fcf8147d-dc00-41af-ac54-6c6b3cce75a2" class="">Docker는 리눅스 컨테이너를 사용하여 어플리케이션을 패키징하고 실행하는데 사용됩니다.</p><p id="27d80f7c-64f8-4c71-97b8-355520570894" class="">Docker는 어플리케이션을 더 빠르게 배포할 수 있게 해주고, 어플리케이션을 실행하는 환경을 일관되게 유지할 수 있습니다.</p></blockquote><h3 id="eddf79e5-01a1-46b1-bd10-630a97e04139" class=""><strong>적용</strong></h3><ul id="d1064a52-6e54-4f57-8378-0289d7f9cc28" class="bulleted-list"><li style="list-style-type:disc"><strong>개발 환경 구축</strong><br/>개발 환경을 구축하기 위해 사용하였습니다.<br/></li></ul><ul id="8c5bfd65-6d25-48c4-b89a-4b4b92d3810b" class="bulleted-list"><li style="list-style-type:disc"><strong>배포 환경 구축</strong><br/>배포 환경을 구축하기 위해 사용하였습니다.<br/></li></ul><h2 id="645d6521-ce65-475d-a1a0-0e90e687ac28" class=""><strong>3. Jenkins</strong></h2><blockquote id="5224a762-bbbe-4778-84e6-afd9041f86fa" class="">Jenkins는 오픈소스 자동화 서버입니다.<p id="645a8b54-1c88-4d16-85fe-8d7ac787f116" class="">Jenkins는 빌드, 테스트, 배포 등의 작업을 자동화할 수 있습니다.</p></blockquote><h3 id="10c7a6e3-f1c5-4ad1-8e89-9510da59d5cc" class=""><strong>적용</strong></h3><ul id="87b5716d-0e70-4923-9f0b-51bfb911954d" class="bulleted-list"><li style="list-style-type:disc"><strong>CI/CD 파이프라인 구축</strong></li></ul><ul id="0d9460a8-657c-462e-b734-962dca783c79" class="bulleted-list"><li style="list-style-type:disc"><strong>배포 환경 구축</strong></li></ul><p id="ed8413fd-3062-418d-b335-8db9dda95bb7" class="">
+</p><h2 id="cb3f10cf-e889-46d4-9417-aba5b3df81a3" class=""><strong>4. Unreal(UE4)</strong></h2><p id="9b0f7f18-5e3d-4acd-ab69-149a2007da14" class="">
+</p><figure id="4e3cec02-d7f3-4e8b-8f99-d059cfc4b1eb" class="image" style="text-align:left"><a href="Unreal_Engine_Logo.svg"><img style="width:288px" src="Unreal_Engine_Logo.svg"/></a></figure><p id="fb4558b6-0877-4753-94a6-621b7f764eee" class="">
+</p><blockquote id="f6c1ec96-5899-4e3c-a28b-866bba762b95" class="">Unreal은 3D 게임 엔진입니다.<p id="614aca03-7adf-4f01-98ce-95ee36f51c3d" class="">Unreal은 C++, 블루프린트를 활용하여 게임 프로젝트에 필요한 오브젝트들을 구성하고, 각 오브젝트들 간의 상호작용을 정의할 수 있습니다.</p></blockquote><h3 id="79f8c706-787c-481d-86fb-512db2924799" class=""><strong>적용</strong></h3><ul id="4ae68964-d9cc-44ad-b3c7-a12553575c12" class="bulleted-list"><li style="list-style-type:disc">게임 환경 구축(Game Instance)</li></ul><ul id="86c1dd71-1afe-490f-a327-b856dacb59f3" class="bulleted-list"><li style="list-style-type:disc">각 맵(Level) 별 게임 모드 및 상태 구축(Game Mode, Game State)</li></ul><ul id="eb709787-907a-40b3-924f-a5178e66918c" class="bulleted-list"><li style="list-style-type:disc">각 맵 별로 필요한 Actor, Pawn, Character, Projectile 구축</li></ul><ul id="8eb80539-a98e-4982-93b5-750185df36e6" class="bulleted-list"><li style="list-style-type:disc">Character와 Pawn의 입력에 대한 애니메이션 구현(Controller → Animation Montage)</li></ul><ul id="35629ca6-99f2-4e4e-8f0a-ce111f8dc849" class="bulleted-list"><li style="list-style-type:disc">버튼을 사용한 카메라 전환 구현</li></ul><ul id="893af159-1688-4692-b8f1-1225b29edda9" class="bulleted-list"><li style="list-style-type:disc">각 맵 별 UI 구현</li></ul><p id="1db95e01-ba5e-4612-8cb5-1c6465f43847" class="">
+</p><p id="ad6d3d7e-cabe-4103-952e-527657fe33f3" class="">
+</p><hr id="25afb4f3-bae8-47a6-9a38-d1303266fbee"/><h1 id="f7203457-6a3b-4c4e-b04d-1e8cbb79c6e9" class=""><strong>🐰 기술 특이점</strong></h1><h2 id="2c98d696-69f9-4884-a555-ab5e8809d065" class="">언리얼</h2><p id="39260fe2-aab1-44da-8c25-247e10710fbf" class="">언리얼 엔진은 리얼타임 기술을 활용하는 모든 사용자를 위한 완벽한 게임 개발 툴 세트이다.</p><ul id="53c6bf7f-a44f-417a-998c-4439b075e8b5" class="bulleted-list"><li style="list-style-type:disc">리얼타임 기술 :  가상공간을 딜레이 없이 실시간 렌더링(모델링 된 오브젝트를 시각화 해주는 것)을 통해 구현<ul id="6ac23be3-2327-4e2f-a227-d5af5447f0b9" class="bulleted-list"><li style="list-style-type:circle">과거 : 특정 장면 또는 오브젝트를 현실에 가깝게 구현하기 위해 소요되는 시간이 길었다.</li></ul><ul id="6ac56464-1c41-4908-aabe-3f1f68aeab46" class="bulleted-list"><li style="list-style-type:circle">현재 : 다양한 고퀄리티 에셋을 통해 같은 과정에 긴 시간을 들이지 않고 실시간으로 가상 현실(게임 내 공간)내에 에셋들이 배치되는, 특정 장면 구현을 위한 UV 맵핑 시간이 줄어들었다.</li></ul></li></ul><ul id="69adb8a3-7c48-4544-9cd4-96d8ce94e887" class="bulleted-list"><li style="list-style-type:disc">블루프린트 기술 : 기본 스크립트 언어인 C++을 시각화 하여 기능을 구현할 수 있게 도와주는 기술<ul id="d27ffd4d-a75d-4eaa-8aeb-853786377363" class="bulleted-list"><li style="list-style-type:circle">직접 코딩을 하지 않아도 블루프린트를 통해 프로그래밍 가능</li></ul></li></ul><ul id="8399b2d8-3858-49f3-86e9-c42468d17ba1" class="bulleted-list"><li style="list-style-type:disc">압도적인 그래픽 성능 : 레이 트레이싱(Ray-Tracing) 기법을 활용하여 정밀한 빛 반사 효과 표현<ul id="c4cd315a-e810-4b00-8985-d3a4e80f9cfb" class="bulleted-list"><li style="list-style-type:circle">보다 더 현실감 있는 가상 세계 구현 가능</li></ul></li></ul><ul id="c311febf-bf10-499e-9d1a-a55f9bebd4aa" class="bulleted-list"><li style="list-style-type:disc">소스 코드 100% 활용 : 다른 게임 엔진에 비해 구조가 엄격<ul id="fb802cfd-15ad-4703-92fe-5c0a0e81efbd" class="bulleted-list"><li style="list-style-type:circle">오브젝트 성격에 맞는 부모 클래스를 선택하여, 해당 클래스에 있는 기능들을 활용</li></ul></li></ul><h1 id="c387cc47-da9f-4166-b805-b082199bae91" class=""><strong>🐴 서비스 아키텍처</strong></h1><hr id="1f6268ce-f872-4044-933d-78e710848966"/><p id="838a0ce3-d530-40cb-87e7-4d3dc358e22c" class="">
+</p><figure id="7d722e7b-bebd-49da-a044-e7b9e355378e" class="image"><a href="Web_App_Reference_Architecture.png"><img style="width:707.984375px" src="Web_App_Reference_Architecture.png"/></a></figure><p id="735397b7-fd42-4432-ba84-784131c5be5c" class="">
+</p><h1 id="9396c48a-39de-480e-aec9-0d5d10a9723a" class=""><strong>🐰 프로젝트 산출물</strong></h1><h2 id="c2306b5c-d750-459e-99f4-fe0e92ca8777" class=""><strong>프로젝트 진행</strong></h2><h3 id="1fbc858a-4ee4-41b8-9bce-269c9b37f3b7" class="">1. API 명세서</h3><figure id="221e1f86-35aa-49bd-83f3-eb099220d1cc" class="image"><a href="Untitled.png"><img style="width:707.984375px" src="Untitled.png"/></a></figure><p id="c6fed458-4074-4f92-aceb-130f5ecff389" class="">
+</p><h3 id="dd82a433-2dee-42e7-9b32-c61b2c477492" class="">2. ERD</h3><figure id="5bed0db9-8ff8-4cbe-9605-fc59233a2d16" class="image" style="text-align:left"><a href="makja_erd.png"><img style="width:288px" src="makja_erd.png"/></a></figure><p id="b609af22-928e-4835-a0ce-00da5b8ed815" class="">
+</p><h2 id="62f4fff4-c4ef-46e2-809b-7b62ae655047" class="">3. Game Classes (클래스 관계도)</h2><figure id="91006bbf-49f9-4fe0-92fa-2d96fca7191d" class="image"><a href="image.png"><img src="image.png"/></a></figure><p id="04dd9c29-1116-42fd-83c6-865d97ba7514" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
